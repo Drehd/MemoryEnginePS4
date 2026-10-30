@@ -1,0 +1,34 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="MemEngine360.PS4.PSRPC.OpenPSRPCConnectionView">
+    <StackPanel Margin="10">
+        <TextBlock Padding="0,0,0,2"
+                   Text="Start the game with the PSRPC PRX loaded, and wait for the 'PSRPC Ready!' notification on the PS4"
+                   FontSize="16"
+                   Foreground="{DynamicResource ABrush.ColourfulGlyph.Static}"
+                   FontWeight="Medium"
+                   TextWrapping="Wrap"/>
+        <Separator/>
+
+        <TextBlock Text="IP/Hostname Address" Padding="0,5"/>
+        <TextBox x:Name="PART_IpAddressTextBox" Padding="5,5"
+                 VerticalContentAlignment="Center"
+                 ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
+
+        <TextBlock Text="Port" Padding="0,5"/>
+        <TextBox x:Name="PART_PortTextBox" Padding="5,5"
+                 VerticalContentAlignment="Center"
+                 ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
+
+        <Separator Margin="0,5"/>
+        <TextBlock Padding="0,0,0,2"
+                   Text="MemoryEngine addresses are 32-bit, so it sees a 4 GB window of the PS4's memory. The window starts on the game's executable; move it with 'Set Memory Window...' in the Remote Controls menu. Addresses shown are the low 32 bits of the PS4 address."
+                   Foreground="OrangeRed"
+                   TextWrapping="Wrap"
+                   FontWeight="Medium"/>
+        <Separator/>
+    </StackPanel>
+</UserControl>

@@ -67,6 +67,7 @@ using MemEngine360.ModTools;
 using MemEngine360.ModTools.Commands;
 using MemEngine360.PointerScanning;
 using MemEngine360.PS3;
+using MemEngine360.PS4;
 using MemEngine360.Scripting;
 using MemEngine360.Scripting.Commands;
 using MemEngine360.Sequencing;
@@ -308,6 +309,7 @@ public class MemoryEngineApplication : AvaloniaApplicationPFX {
         }
 
         this.PluginLoader.AddCorePlugin(typeof(PluginPS3));
+        this.PluginLoader.AddCorePlugin(typeof(PluginPS4));
 
         MemoryEngineBrushLoader.Init();
         ThemeManagerImpl manager = (ThemeManagerImpl) this.ComponentStorage.GetComponent<ThemeManager>();

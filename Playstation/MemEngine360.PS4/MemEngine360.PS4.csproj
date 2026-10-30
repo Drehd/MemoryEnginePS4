@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>PS4</AssemblyName>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+        <PlatformTarget>x64</PlatformTarget>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <PlatformTarget>x64</PlatformTarget>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\MemEngine360.BaseFrontEnd\MemEngine360.BaseFrontEnd.csproj"/>
+        <ProjectReference Include="..\..\MemEngine360\MemEngine360.csproj"/>
+        <ProjectReference Include="..\..\PFXToolKitUI\PFXToolKitUI.Avalonia\PFXToolKitUI.Avalonia.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Update="PSRPC\OpenPSRPCConnectionView.axaml.cs">
+            <DependentUpon>OpenPSRPCConnectionView.axaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+    </ItemGroup>
+</Project>

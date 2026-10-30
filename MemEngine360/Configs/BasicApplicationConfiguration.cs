@@ -42,6 +42,12 @@ public class BasicApplicationConfiguration : PersistentConfiguration {
             defaultValue: "",
             owner => owner.lastPS3HostName, (x, y) => x.lastPS3HostName = y, false);
 
+    public static readonly PersistentProperty<string> LastPS4HostNameProperty =
+        PersistentProperty.RegisterString<BasicApplicationConfiguration>(
+            "LastPS4HostName",
+            defaultValue: "",
+            owner => owner.lastPS4HostName, (x, y) => x.lastPS4HostName = y, false);
+
     public static readonly PersistentProperty<string> LastConnectionTypeUsedProperty =
         PersistentProperty.RegisterString<BasicApplicationConfiguration>(
             "LastConnectionTypeUsed",
@@ -161,6 +167,7 @@ public class BasicApplicationConfiguration : PersistentConfiguration {
     private string defaultTheme = DefaultThemeProperty.DefaultValue;
     private string lastXboxHostName = LastXboxHostNameProperty.DefaultValue;
     private string lastPS3HostName = LastPS3HostNameProperty.DefaultValue;
+    private string lastPS4HostName = LastPS4HostNameProperty.DefaultValue;
     private string lastConnectionTypeUsed = LastConnectionTypeUsedProperty.DefaultValue;
     private uint startAddr = StartAddressProperty.DefaultValue;
     private uint scanLength = ScanLengthProperty.DefaultValue;
@@ -195,6 +202,14 @@ public class BasicApplicationConfiguration : PersistentConfiguration {
     public string LastPS3HostName {
         get => LastPS3HostNameProperty.GetValue(this);
         set => LastPS3HostNameProperty.SetValue(this, value);
+    }
+
+    /// <summary>
+    /// Gets or sets the last host name that was entered when connecting to a PS4
+    /// </summary>
+    public string LastPS4HostName {
+        get => LastPS4HostNameProperty.GetValue(this);
+        set => LastPS4HostNameProperty.SetValue(this, value);
     }
     
     /// <summary>
